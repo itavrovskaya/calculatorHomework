@@ -22,19 +22,19 @@ public class Calculator {
 
     @GetMapping("/plus")
     public String SumNumbers(@RequestParam int number1, @RequestParam int number2) {
-        int result = CalculatorService.sum(number1, number2);
+        int result = calculatorService.sum(number1, number2);
         return generateMessage(number1, number2, '+', result);
     }
 
     @GetMapping("/minus")
     public String SubtractNumbers(@RequestParam int number1, @RequestParam int number2) {
-        int result = CalculatorService.minus(number1, number2);
+        int result = calculatorService.minus(number1, number2);
         return generateMessage(number1, number2, '-', result);
     }
 
     @GetMapping("/multiply")
     public String MultiplyNumbers(@RequestParam int number1, @RequestParam int number2) {
-        int result = CalculatorService.multiply(number1, number2);
+        int result = calculatorService.multiply(number1, number2);
         return generateMessage(number1, number2, '*', result);
     }
 
@@ -43,7 +43,7 @@ public class Calculator {
         if (number2 == 0) {
             return "Деление на 0 невозможно.";
         }
-        int result = CalculatorService.divide(number1, number2);
+        int result = calculatorService.divide(number1, number2);
         return generateMessage(number1, number2, '/', result);
     }
 
